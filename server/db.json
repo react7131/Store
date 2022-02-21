@@ -1,0 +1,271 @@
+{
+  "brands": [
+    {
+      "id": 1,
+      "brandName": "Apple"
+    },
+    {
+      "id": 2,
+      "brandName": "Sony"
+    },
+    {
+      "id": 3,
+      "brandName": "Samsung"
+    },
+    {
+      "id": 4,
+      "brandName": "Litte world"
+    },
+    {
+      "id": 5,
+      "brandName": "Dell"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "categoryName": "Mobile"
+    },
+    {
+      "id": 2,
+      "categoryName": "Electronics"
+    },
+    {
+      "id": 3,
+      "categoryName": "Appliances"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "image": "https://m.media-amazon.com/images/I/712yl2wTDbL._AC_SX522_.jpg",
+      "productName": "Apple iPhone",
+      "title": "Apple iPhone 12 Pro, 128GB, Pacific Blue-Unlocked",
+      "description": [
+        "Unlocked and compatible with any carrier of choice on GSM and CDMA networks (e.g. AT&T, T-Mobile, Sprint, Verizon, US Cellular, Cricket, Metro, Tracfone, Mint Mobile, etc.)",
+        "Tested for battery health and guaranteed to come with a battery that exceeds 90% of original capacity.",
+        "Inspected and guaranteed to have minimal cosmetic damage, which is not noticeable when the device is held at arm's length. Successfully passed a full diagnostic test which ensures like-new functionality and removal of any prior-user personal information.",
+        "Includes a brand new, generic charging cable that is certified Mfi (Made for iPhone) and a brand new, generic wall plug that is UL certified for performance and safety. Also includes a SIM tray removal tool but does not come with headphones or a SIM card.",
+        "Backed by a one-year satisfaction guarantee."
+      ],
+      "price": 8900,
+      "brandId": 1,
+      "categoryId": 1,
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "image": "https://m.media-amazon.com/images/I/81MF389-9gS._AC_SX342_.jpg",
+      "productName": "Apple iPad Pro",
+      "title": "2021 Apple 11-inch iPad Pro (Wi‑Fi, 128GB) - Silver",
+      "description": [
+        "Apple M1 chip for next-level performance",
+        "Stunning 11-inch Liquid Retina display with ProMotion, True Tone, and P3 wide color",
+        "TrueDepth camera system featuring Ultra Wide front camera with Center Stage",
+        "12MP Wide camera, 10MP Ultra Wide camera, and LiDAR Scanner for immersive AR",
+        "Stay connected with ultrafast Wi-Fi",
+        "Go further with all-day battery life",
+        "Thunderbolt port for connecting to fast external storage, displays, and docks",
+        "Face ID for secure authentication and Apple Pay",
+        "Four speaker audio and five studio-quality microphones"
+      ],
+      "price": 4200,
+      "brandId": 1,
+      "categoryId": 2,
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "image": "https://m.media-amazon.com/images/I/813ARt4eJAL._AC_SL1500_.jpg",
+      "productName": "Sony Camera",
+      "title": "Sony Cyber‑Shot RX10 IV with 0.03 Second Auto-Focus & 25x Optical Zoom",
+      "description": [
+        "World’s Fastest AF acquisition speed of 0.03 sec. Optical image stabilization technology developed by Sony is valuable for handheld still and movie shooting, especially in low light or at the ultra-telephoto end of the zoom range up to 600 mm",
+        "315 phase-detection AF points covering Approx. 65% of the frame. Light etering mode- Multi pattern, centre weighted, spot (Standard/Large), entire screen average, highlight",
+        "ZEISS Vario-Sonnar T 24-600mm3 F2.4-F4 ultra-zoom Lens",
+        "20.1 MP 1 back Illuminated Exmor RS stacked CMOS sensor w/ DRAM. Dimensions (W x H x D) (CIPA) -5 1/4 x 3 3/4 x 5 3/4 inches, 5 1/4 x 3 3/4 x 5 1/8 inches (from front of lens to monitor). Weight-2 pounds 6.7 ounce (Battery and SDXC Card included) / Approx. 2 pounds 5.1 ounces) (Body Only)",
+        "24 Fps4 continuous shooting up to 249 frames with AF/AE tracking. Filter diameter:62 mm."
+      ],
+      "price": 4500,
+      "brandId": 2,
+      "categoryId": 2,
+      "rating": 4
+    },
+    {
+      "id": 4,
+      "image": "https://m.media-amazon.com/images/I/41ouv6smO0L._AC_SX425_.jpg",
+      "productName": "Sony 5.1 Home Theatre",
+      "title": "Sony BDVE3100 5.1 Channel Home Theater System",
+      "description": [
+        "Power Output : 1000W Total (RMS): Center 250W, Surround 125W, Subwoofer 250W, Front 125W",
+        "Built-in Wi-Fi: Stream Netflix, HuluPlus, Pandora & more",
+        "Full HD 1080p: Upscale standard DVDs to near HD quality, Input and Output Terminals:ANALOG AUDIO INPUT: PIN JACK (1), ETHERNET CONNECTION (1), HDMI IN/OUT (0/1), OPTICAL AUDIO INPUT (1), USB INPUT (1 Front), USB Keyboard",
+        "Wirelessly stream music from Bluetooth devices with just one-touch",
+        "Full range bass reflex speaker system & 7.1-Inch subwoofer",
+        "Power Output : 1000W Total (RMS): Center 250W, Surround 125W, Subwoofer 250W, Front 125W",
+        "Built-in Wi-Fi: Stream Netflix, HuluPlus, Pandora & more"
+      ],
+      "price": 598,
+      "brandId": 2,
+      "categoryId": 2,
+      "rating": 4
+    },
+    {
+      "id": 5,
+      "image": "https://m.media-amazon.com/images/I/61K+BlazOML._AC_SY450_.jpg",
+      "productName": "Carrier 2 Ton Air Conditioner",
+      "title": "Little World Air Conditioner Cover for Outside Unit",
+      "description": [
+        "Guaranteed to fit square American standardard air conditioners up to a size of 34 long x 34 wide x 30 high. AC cover for outside unit polyster oxford waterproof undercoating to protect your outdoor ac compressor.",
+        "Central air conditioner cover elastic hem cord with a toggle allows adjustment for a tight and custom fit.",
+        "Air vent cover helps prevent snow and water from getting into the vent. Air conditioner cover outdoor reducing interior humidity.",
+        "Air conditioning cover for outside unit won't crack in cold or hot weather",
+        "Outdoor air conditioner cover padded handles for easy fitting and removal"
+      ],
+      "price": 7780,
+      "brandId": 4,
+      "categoryId": 3,
+      "rating": 3
+    },
+    {
+      "id": 6,
+      "image": "https://m.media-amazon.com/images/I/71U-1Acr3sL._AC_SY450_.jpg",
+      "productName": "Dell Monitor",
+      "title": "Dell U-Series 32-Inch Screen LED-Lit Monitor (U3219Q), Black",
+      "description": [
+        "Experience four times more detail than Full HD with 3840x2160 Ultra HD 4K resolution.",
+        "Your images shine the way they were meant to on the world’s first 31.5” 4K Ultra HD monitor with VESA certified DisplayHDR 400i featuring HDR content playback support.",
+        "Your UltraSharp monitor is factory calibrated at 99% sRGB coverage right out of the box. You can trust that your videos reflect lifelike color.",
+        "Response Time - 8 ms (normal) ; 5 ms (Fast) - (gray to gray)",
+        "Pixel Pitch:0.182 mm",
+        "60 hertz"
+      ],
+      "price": 780,
+      "brandId": 5,
+      "categoryId": 2,
+      "rating": 4
+    },
+    {
+      "id": 7,
+      "image": "https://m.media-amazon.com/images/I/71ctZEsl1vL._AC_SX569_.jpg",
+      "productName": "Sony Mobile Phone",
+      "title": "Roll over image to zoom in Sony Xperia 5 II Unlocked Smartphone",
+      "description": [
+        "21:9 CinemaWide 120Hz4 6.1” HDR OLED display “powered by CineAlta”",
+        "Triple camera array with ZEISS optics and Real-time Eye AF",
+        "World’s first smartphone w/ 4K/120p for incredible slow motion video",
+        "Fast gaming: 240Hz touch scanning rate 240Hz Motion blur reduction",
+        "Superior sound with true front stereo speakers and 3.5mm audio jack"
+      ],
+      "price": 4848,
+      "brandId": 2,
+      "categoryId": 1,
+      "rating": 2
+    },
+    {
+      "id": 8,
+      "image": "https://m.media-amazon.com/images/I/61X5PYoBN9L._AC_SX342_.jpg",
+      "productName": "Samsung Mobile Phone",
+      "title": "Samsung Electronics Galaxy A42 5G, Factory Unlocked Smartphone, Android Cell Phone, 128GB",
+      "description": [
+        "Carry On with Long-Lasting Battery: Nothing kills the vibe faster than a low battery notification; Worry not with Galaxy A42 5G’s long-lasting 5,000mAh battery and 15W Fast Charging",
+        "Fast, Reliable 5G Performance: Galaxy A42 5G mobile phone features plenty of processing power to post photos and videos, play games, and chat with friends with minimal lag",
+        "Expandable Storage: Comes with 128GB of storage built in, giving you plenty of space to keep your favorite photos and videos close at hand; Want more? Store up to 1TB more by adding a MicroSD card",
+        "Infinite Display: With a 6.6” Infinity-U Super AMOLED display, your view is massively awesome with crystal-clear clarity and vibrant color"
+      ],
+      "price": 2540,
+      "brandId": 3,
+      "categoryId": 1,
+      "rating": 2
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "scott@test.com",
+      "password": "Scott123",
+      "fullName": "Scott",
+      "dateOfBirth": "2000-12-15",
+      "gender": "male",
+      "role": "user"
+    },
+    {
+      "email": "sara@gmail.com",
+      "password": "Sara123",
+      "fullName": "sara",
+      "dateOfBirth": "2021-09-21",
+      "gender": "female",
+      "id": 3,
+      "role": "user"
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "Admin123",
+      "fullName": "Admin",
+      "dateOfBirth": "2001-09-09",
+      "gender": "female",
+      "id": 4,
+      "role": "admin"
+    },
+    {
+      "email": "david@yahoo.com",
+      "password": "David123",
+      "fullName": "david",
+      "dateofbirth": "2022-02-02",
+      "gender": "male",
+      "role": "user",
+      "id": 5
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 1,
+      "productId": 1,
+      "quantity": 2,
+      "isPaymentCompleted": true
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "productId": 3,
+      "quantity": 12,
+      "isPaymentCompleted": true
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "productId": 4,
+      "quantity": 1,
+      "isPaymentCompleted": true
+    },
+    {
+      "userId": 1,
+      "productId": 2,
+      "quantity": 4,
+      "isPaymentCompleted": true,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "productId": 6,
+      "quantity": 3,
+      "isPaymentCompleted": false,
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "productId": 5,
+      "quantity": 3,
+      "isPaymentCompleted": false,
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "productId": 6,
+      "quantity": 3,
+      "isPaymentCompleted": false,
+      "id": 11
+    }
+  ]
+}

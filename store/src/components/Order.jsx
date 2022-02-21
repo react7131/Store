@@ -12,7 +12,7 @@ const Order = (props) => {
                     style={{width: '60px', height:'60px', objectFit: 'contain'}}
                 /></Link>
             </td>
-            <td className="text-truncate justify-content-start" style={{width: '120px'}}><Link className=" order-name text-dark text-decoration-none" to={`/products/${ props.order.productId}`}>{props.order.product.title}</Link></td>
+            <td className="text-truncate justify-content-start" style={{width: '120px'}}><Link className=" order-name text-dark text-decoration-none" to={`/store/${ props.order.productId}`}>{props.order.product.title}</Link></td>
             <td>{props.order.quantity}</td>
             <td>{props.order.product.price}</td>
             <td>{props.order.quantity * props.order.product.price}</td>

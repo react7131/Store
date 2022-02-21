@@ -6,7 +6,7 @@ const Order = (props) => {
     return (
         <tr className=" m-3 bg-light rounded-3 px-2">
             <td className="p-0">
-                <Link to={`/products/${props.order.productId}`}><img 
+                <Link to={`/store/${props.order.productId}`}><img 
                     src={props.order.product.image} 
                     alt={props.order.product.title} 
                     style={{width: '60px', height:'60px', objectFit: 'contain'}}

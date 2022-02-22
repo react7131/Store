@@ -256,16 +256,16 @@
     {
       "userId": 1,
       "productId": 5,
-      "quantity": 3,
+      "quantity": 6,
       "isPaymentCompleted": false,
       "id": 10
     },
     {
       "userId": 1,
-      "productId": 6,
-      "quantity": 3,
+      "productId": 1,
+      "quantity": 1,
       "isPaymentCompleted": false,
-      "id": 11
+      "id": 12
     }
   ]
 }

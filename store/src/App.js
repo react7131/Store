@@ -70,6 +70,13 @@ let reducer = (state, action) => {
         currentUserName: null,
         currentUserRole: null
       }
+    case 'load':
+      return {
+        isLoggedIn: action.payload.isLoggedIn,
+        currentUserId: action.payload.currentUserId,
+        currentUserName: action.payload.currentUserName,
+        currentUserRole: action.payload.currentUserRole
+      }
     default: 
       return state;
     }
@@ -98,10 +105,11 @@ if(localStorage.getItem("userInfo") === null){
   localStorage.setItem("userInfo", JSON.stringify({})) 
 }else {
   let localAccount = JSON.parse(localStorage.getItem("userInfo"))  
-  dispatch(localAccount)
+ 
 dispatch({
-  type: 'login',
+  type: 'load',
   payload: {
+   isLoggedIn: localAccount.isLoggedIn,
    currentUserId: localAccount.currentUserId,
    currentUserName: localAccount.currentUserName,
    currentUserRole: localAccount.currentUserRole

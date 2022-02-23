@@ -17,36 +17,6 @@ import ShoppingCart from './components/shoppingCart';
 import PrivateRoute from './components/privateRoute';
 import {useEffect} from 'react';
 
-
-// useEffect( () => {
-//   getLocalAccountInfo();
-// },[])
-
-// useEffect( () => {
-//   saveLocalAccountInfo();
-// },[user])
-
-// const saveLocalAccountInfo = () => {
-//   localStorage.setItem("userInfo", JSON.stringify(user))  
-// }
-
-// const getLocalAccountInfo = () => {
-// if(localStorage.getItem("userInfo") === null){
-//   localStorage.setItem("userInfo", JSON.stringify({})) 
-// }else {
-//   let localAccount = JSON.parse(localStorage.getItem("userInfo"))  
-//   dispatch(localAccount)
-// dispatch({
-//   type: 'login',
-//   payload: {
-//    currentUserId: localAccount.id,
-//    currentUserName: localAccount.fullName,
-//    currentUserRole: localAccount.role
-//   }
-// }) 
-// }
-// }
-
 let initialUser = {
   isLoggedIn: false,
   currentUserId: null,

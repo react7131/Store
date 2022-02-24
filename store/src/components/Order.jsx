@@ -14,8 +14,8 @@ const Order = (props) => {
             </td>
             <td className="text-truncate justify-content-start" style={{width: '120px'}}><Link className=" order-name text-dark text-decoration-none" to={`/store/${ props.order.productId}`}>{props.order.product.title}</Link></td>
             <td>{props.order.quantity}</td>
-            <td>{props.order.product.price}</td>
-            <td>{props.order.quantity * props.order.product.price}</td>
+            <td> $ {(props.order.product.price).toFixed(2)}</td>
+            <td>$ {(props.order.quantity * props.order.product.price).toFixed(2)}</td>
         </tr>
     )
 }

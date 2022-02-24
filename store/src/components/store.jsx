@@ -115,8 +115,8 @@ const Store = () => {
                 </div>
             </div>
             <div className="row g-4 py-3">
-                <div className="col-md-4">
-                    <div className="rounded-3 bg-white p-4">
+                <div className="col-lg-3 col-md-4 col-sm-5">
+                    <div className="rounded-3 bg-white p-4" style={{fontSize: '0.9em'}}>
                         <div className="py-3">
                             <h5>Brands</h5>
                             <ul className="list-group list-group-flush">
@@ -132,7 +132,7 @@ const Store = () => {
                     </div>
                     
                 </div>
-                <div className="col-md-8">
+                <div className="col-lg-9 col-md-8 col-sm-7 ">
                     <div className="row g-2">
                         {renderedProducts.length ? renderedProducts : <div className="d-flex flex-column justify-content-center align-items-center">
                             <img src={svg} alt="" />

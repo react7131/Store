@@ -1,12 +1,15 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 import { useNavigate } from "react-router";
 import { UserContext } from "../userContext";
 import api from "../api";
+import Input from "./input";
 
 const Login = () => {
 
-    const currentUser = useContext(UserContext);
-    const [formLogin, setformLogin] = useState({email: "scott@test.com", password: "Scott123"});
+    const [formLogin, setformLogin] = useState({
+        email: "scott@test.com",
+        password: "Scott123"
+    });
     const [errors, setErrors] = useState({
         email: [],
         password: []
@@ -16,14 +19,9 @@ const Login = () => {
         password: false
     });
     const [message, setMessage] = useState("");
-    let navigate = useNavigate();
-    useEffect( () => {
-        document.title = "Login"
-    },[])
-
-    const changeHandler = (e) => {
-        setformLogin({...formLogin, [e.target.name]: e.target.value} )
-    }
+    const navigate = useNavigate();
+    const emailRef= useRef(null);
+    const currentUser = useContext(UserContext);
 
     const validate = () => {
         let errosData = {};
@@ -58,7 +56,31 @@ const Login = () => {
           setErrors(errosData);
     }
 
+    const isValid = () => {
+        let valid = true;
+        for( let control in errors) {
+            if(errors[control].length > 0) {
+                valid = false;
+            }
+        } 
+        return valid;     
+    }
+
+    useEffect( () => {
+        document.title = "Login"
+        emailRef.current.focus();
+    },[])
+
     useEffect(() => validate(),[formLogin])
+
+    const changeHandler = (e) => {
+        setformLogin({...formLogin, [e.target.name]: e.target.value} )
+    }
+
+    const blurHandler = (e) => {
+        setDirty({ ...dirty, [e.target.name]: true});
+        validate();
+    }
 
     const onLoginClick = async() => {
         let dirtyData = dirty;
@@ -98,63 +120,18 @@ const Login = () => {
         } 
     }
 
-    const isValid = () => {
-        let valid = true;
-        for( let control in errors) {
-            if(errors[control].length > 0) {
-                valid = false;
-            }
-        } 
-        return valid;     
-    }
-
     return (
         <div className="row">
-            <div className="col-lg-6 col-md-8 mx-auto mt-4 shadow border border-info rounded-3 p-0">
+            <div className="col-10 col-lg-5 col-sm-8 mx-auto mt-4 shadow border border-info rounded-3 p-0">
                 <div className="card ">
                     <div className="card-header text-center fs-3">
                         Login
                     </div>
                     <div className="card-body px-4">
                     <form>
-                    <div className="mb-3 form-group">
-                        <label htmlFor="email" className="form-label">Enter your email address</label>
-                        <input 
-                            type="email" 
-                            className="form-control" 
-                            id="email" 
-                            placeholder="name@example.com" 
-                            name="email" 
-                            value={formLogin.email}
-                            onChange={changeHandler}
-                            onBlur={() => {
-                                setDirty({ ...dirty, email: true});
-                                validate();
-                            }}
-                        />
-                        <div className="text-danger">
-                            {dirty['email']&&errors['email'] ? errors['email'] : ''}
-                        </div>
-                    </div>
-                    <div className="mb-3 form -group">
-                        <label htmlFor="password" className="form-label">Enter your password</label>
-                        <input 
-                            type="password" 
-                            className="form-control" 
-                            id="password" 
-                            placeholder="your password" 
-                            name="password" 
-                            value={formLogin.password}
-                            onChange={changeHandler}
-                            onBlur={() => {
-                                setDirty({ ...dirty, password: true});
-                                validate();
-                            }}
-                        />
-                        <div className="text-danger">
-                            {dirty['password']&&errors['password'] ? errors['password'] : ''}
-                        </div>
-                    </div>
+                    <Input type="email" name="email" label="Email" value={formLogin.email} onChange={changeHandler} onBlur={blurHandler} inputRef={emailRef} dirty={dirty} errors={errors} />
+                    <Input type="password" name="password" label="Password" value={formLogin.password} onChange={changeHandler} onBlur={blurHandler} dirty={dirty} errors={errors} />
+                    
                 </form>
                     </div>
                     <div className="card-footer text-center border-0">

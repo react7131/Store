@@ -10,21 +10,21 @@ const Navbar = () => {
     return(
         <nav className="navbar navbar-expand-md navbar-light bg-white px-3 shadow" >
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/">Navbar</Link>
+                <NavLink className="navbar-brand" to="/">Our Store</NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul className="navbar-nav me-auto mb-2 mb-md-0">
                          
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/store">
+                            <NavLink className={({ isActive }) => isActive ? "nav-link text-info" : "nav-link"} to="/store">
                                 <i className="fa fa-shopping-bag"></i> Store
                             </NavLink>
                         </li> 
                         {(currentUser.user.isLoggedIn && currentUser.user.currentUserRole === 'user') ?
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/dashboard">
+                            <NavLink className={({ isActive }) => isActive ? "nav-link text-info" : "nav-link"} to="/dashboard">
                                 <i className="fa fa-dashboard"></i> Dashboard
                             </NavLink>
                         </li> : ""}

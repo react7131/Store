@@ -64,7 +64,7 @@ const ShoppingCart = () => {
 
     const renderedList = orders.map(order => {
         return (
-            <div key={order.id} className="d-flex align-items-center px-3 " style={{width: '90%', height: '200px'}}>
+            <div key={order.id} className="shop-card border-bottom d-flex align-items-center px-3 " style={{width: '90%', height: '200px'}}>
                 <div className="me-3 text-center" style={{width: '30%'}} >
                         <img 
                             src={order.product.image} 
@@ -77,13 +77,13 @@ const ShoppingCart = () => {
                     <div className="mb-3">{order.product.title}</div>
                     
                     <div className="d-flex justify-content-between w-75 align-items-center" >
-                        <div className="text-danger d-flex justify-content-around border rounded-3 ">
+                        <div className="text-danger d-flex justify-content-between border rounded-3 ">
                             {order.quantity === 1 ? <span style={{cursor:'pointer'}} onClick={() => deleteItem(order.id)} className="m-2"><i className="fas fa-trash"></i></span>:
                             <span style={{cursor:'pointer'}} onClick={() => decreaseItem(order.id, order.quantity)} className="m-2"><i className="fas fa-minus"></i></span>}
                             <span className="m-2">{order.quantity}</span>
                             <span style={{cursor:'pointer'}} className="m-2" onClick={() => increaseItem(order.id, order.quantity)}><i className="fas fa-plus "></i></span>
                         </div>
-                        <h6>$ {(order.product.price * order.quantity).toFixed(2)}</h6>
+                        <h6>$ {order.product.price * order.quantity}</h6>
                     </div>
                 </div>
             </div> 
@@ -113,17 +113,17 @@ const ShoppingCart = () => {
             : (
                 <div className="row g-4 mt-4">
                     <div className="col-md-8">
-                        <div className="bg-white p-4 border rounded-3">
+                        <div className="bg-white fs-6 p-4 border rounded-3">
                             {renderedList}
                         </div>     
 
                     </div>
                     <div className="col-md-4">
-                    <div className="bg-white p-4 border rounded-3 text-center">
-                        <p>Total Price:</p>
-                        <h5 className="text-primary">$ {total().toFixed(2)}</h5>
-                        <button onClick={() => onBuyNowClick(orders)} className="btn btn-primary btn-lg mt-4 border w-100">Buy Now</button>
-                    </div>
+                        <div className="bg-white p-5 border rounded-3 text-center">
+                            <p>Total Price:</p>
+                            <h5 className="text-primary">$ {total().toFixed(2)}</h5>
+                            <button onClick={() => onBuyNowClick(orders)} className="btn btn-primary btn-lg fs-6 mt-4 border w-100">Buy Now</button>
+                        </div>
                     </div>
                 </div>
             )}

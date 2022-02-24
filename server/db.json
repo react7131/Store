@@ -249,7 +249,7 @@
     {
       "userId": 1,
       "productId": 6,
-      "quantity": 3,
+      "quantity": 4,
       "isPaymentCompleted": false,
       "id": 5
     },
@@ -266,6 +266,13 @@
       "quantity": 1,
       "isPaymentCompleted": false,
       "id": 12
+    },
+    {
+      "userId": null,
+      "productId": 3,
+      "quantity": 1,
+      "isPaymentCompleted": false,
+      "id": 13
     }
   ]
 }

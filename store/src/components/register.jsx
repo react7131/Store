@@ -1,7 +1,8 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { useNavigate } from "react-router";
 import { UserContext } from "../userContext";
 import api from "../api";
+import Input from "./input";
 
 const Register = () => {
     const currentUser = useContext(UserContext);
@@ -31,6 +32,7 @@ const Register = () => {
     const [message, setMessage] = useState("")
 
     let navigate = useNavigate();
+    let emailRef = useRef(null);
 
     const validate = () => {
         let errosData = {};
@@ -91,12 +93,18 @@ const Register = () => {
 
     useEffect( () => {
         document.title = "Register"
+        emailRef.current.focus();
     },[])
 
     useEffect(() => validate(),[formRegister])
 
     const changeHandler = (e) => {
         setformRegister({...formRegister, [e.target.name]: e.target.value} )
+    }
+
+    const blurHandler = (e) => {
+        setDirty({ ...dirty, [e.target.name]: true});
+        validate();
     }
 
     const submitHandler = async() => {
@@ -158,7 +166,7 @@ const Register = () => {
 
     return (
         <div className="row">
-            <div className="col-lg-6 col-md-8 mx-auto mt-4 shadow border border-info rounded-3 p-0">
+            <div className="col-10 col-lg-5 col-sm-8 mx-auto mt-4 shadow border border-info rounded-3 p-0">
                 <div className="card ">
                     <div className="card-header text-center fs-3">
                         Register
@@ -175,121 +183,48 @@ const Register = () => {
                         </ul>
                     </div>
                     <div className="card-body px-4">
-                     <form>
-                        <div className="mb-3 form-group">
-                            <label htmlFor="email" className="form-label">email:</label>
-                            <input 
-                                type="email" 
-                                className="form-control" 
-                                id="email" 
-                                placeholder="name@example.com" 
-                                name="email" 
-                                value={formRegister.email}
-                                onChange={changeHandler}
-                                onBlur={e => {
-                                    setDirty({...dirty, [e.target.name]: true})
-                                    validate();
-                                }}
-                            />
-                            <div className="text-danger">
-                                {dirty['email'] && errors["email"] ? errors["email"] : ""}
-                            </div>
-                        </div>
-                        <div className="mb-3 form-group">
-                            <label htmlFor="password" className="form-label">password:</label>
-                            <input 
-                                type="password" 
-                                className="form-control" 
-                                id="password" 
-                                placeholder="your password" 
-                                name="password" 
-                                value={formRegister.password}
-                                onChange={changeHandler}
-                                onBlur={e => {
-                                    setDirty({...dirty, [e.target.name]: true})
-                                    validate();
-                                }}
-                            />
-                            <div className="text-danger">
-                                {dirty['password'] && errors["password"] ? errors["password"] : ""}
-                            </div>
-                        </div>
-                        <div className="mb-3 form-group">
-                            <label htmlFor="fullname" className="form-label">Full Name:</label>
-                            <input 
-                                type="text" 
-                                className="form-control" 
-                                id="fullname" 
-                                placeholder="your fullname" 
-                                name="fullName" 
-                                value={formRegister.fullname}
-                                onChange={changeHandler}
-                                onBlur={e => {
-                                    setDirty({...dirty, [e.target.name]: true})
-                                    validate();
-                                }}
-                            />
-                            <div className="text-danger">
-                                {dirty['fullName'] && errors["fullName"] ? errors["fullName"] : ""}
-                            </div>
-                        </div>
-                    <div className="mb-3">
-                        <label htmlFor="birthdate" className="form-label">Date of Birth:</label>
-                        <input 
-                            type="date" 
-                            className="form-control" 
-                            id="birthdathdate" 
-                            placeholder="your password" 
-                            name="dateofbirth" 
-                            value={formRegister.dateofbirth}
-                            onChange={changeHandler}
-                            onBlur={e => {
-                                setDirty({...dirty, [e.target.name]: true})
-                                validate();
-                            }}
-                        />
-                        <div className="text-danger">
-                                {dirty['dateofbirth'] && errors["dateofbirth"] ? errors["dateofbirth"] : ""}
-                            </div>
-                    </div>
-                    <div>
-                        <label htmlFor="gender" className="form-label">Gender</label>
-                        <div className="d-flex">
-                            <div className="me-3">
-                                <input 
-                                    type="radio" 
-                                    id="male" 
-                                    name="gender" 
-                                    value="male"
-                                    checked ={formRegister.gender === "male"}
-                                    onChange={changeHandler}
-                                    />
-                                <label htmlFor="male" className="ms-1">male</label>
-                            </div>
+                        <form>
+                            <Input type="email" name="email" label="Email" value={formRegister.email} onChange={changeHandler} onBlur={blurHandler} inputRef={emailRef} dirty={dirty} errors={errors} />
+                            <Input type="password" name="password" label="password" value={formRegister.password} onChange={changeHandler} onBlur={blurHandler} dirty={dirty} errors={errors} />
+                            <Input type="text" name="fullName" label="FullName" value={formRegister.fullName} onChange={changeHandler} onBlur={blurHandler} dirty={dirty} errors={errors} />
+                            <Input type="date" name="dateofbirth" label="Birth Date" value={formRegister.dateofbirth} onChange={changeHandler} onBlur={blurHandler} dirty={dirty} errors={errors} />    
                             <div>
-                                <input 
-                                    type="radio" 
-                                    id="female" 
-                                    name="gender" 
-                                    value="female"
-                                    checked ={formRegister.gender === "female"}
-                                    onChange={changeHandler}
-                                />
-                                <label htmlFor="female" className="ms-1">female</label>
+                                <label htmlFor="gender" className="form-label">Gender</label>
+                                <div className="d-flex">
+                                    <div className="me-3">
+                                        <input 
+                                            type="radio" 
+                                            id="male" 
+                                            name="gender" 
+                                            value="male"
+                                            checked ={formRegister.gender === "male"}
+                                            onChange={changeHandler}
+                                            />
+                                        <label htmlFor="male" className="ms-1">male</label>
+                                    </div>
+                                    <div>
+                                        <input 
+                                            type="radio" 
+                                            id="female" 
+                                            name="gender" 
+                                            value="female"
+                                            checked ={formRegister.gender === "female"}
+                                            onChange={changeHandler}
+                                        />
+                                        <label htmlFor="female" className="ms-1">female</label>
+                                    </div>
+                                </div>
+                                <div className="text-danger">
+                                        {dirty['gender'] && errors["gender"] ? errors["gender"] : ""}
+                                </div>
                             </div>
-                        </div>
-                        <div className="text-danger">
-                                {dirty['gender'] && errors["gender"] ? errors["gender"] : ""}
-                        </div>
-                    </div>
-                </form>
+                        </form>
                     </div>
                     <div className="card-footer text-center border-0">
                         <div className="m-1">{message}</div>
                         <button onClick={submitHandler} className="btn btn-primary px-5">REGISTER</button>
                     </div>
-                </div>
-                
+                </div>   
             </div>
         </div>
     )

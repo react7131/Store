@@ -16,6 +16,7 @@ import Account from './components/account';
 import ShoppingCart from './components/shoppingCart';
 import PrivateRoute from './components/privateRoute';
 import {useEffect} from 'react';
+import Footer from './components/footer';
 
 let initialUser = {
   isLoggedIn: false,
@@ -55,11 +56,9 @@ let reducer = (state, action) => {
 function App() {
 
   const [user, dispatch] = useReducer(reducer, initialUser);
-  console.log(user)
+
   useEffect( () => {
    getLocalAccountInfo();
-   
-
 },[])
 
 useEffect( () => {
@@ -93,7 +92,6 @@ dispatch({
       <ToastProvider>
       <BrowserRouter >
         <Navbar />
-
         <div className="container-fluid p-4">
           <Routes>
             <Route path="/" exact element={<Login />} />
@@ -114,6 +112,7 @@ dispatch({
             <Route path="*"  element={<NotFound />} />
           </Routes>
         </div>
+        <Footer />
       </BrowserRouter>
       </ToastProvider>
     </UserContext.Provider>

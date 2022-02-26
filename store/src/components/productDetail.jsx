@@ -19,7 +19,7 @@ const ProductDetail = () => {
        
     }, [])
 
-    const addToCartHandler = async() => {
+    const addToCartHandler = async() => {   
         const response = await api.post(`orders`,{
             userId: currentUser.user.currentUserId,
             productId: product.id,
@@ -54,7 +54,7 @@ const ProductDetail = () => {
                         className="btn btn-primary btn-lg mt-2 fs-6"
                         onClick={addToCartHandler}
                      >
-                         <span><i className="fa-solid fa-cart-shopping me-2"></i>Add tO Cart</span>
+                         <span><i className="fa-solid fa-cart-shopping me-2"></i>Add to Cart</span>
                      </button> : <button className="btn btn-outline-primary ">Added to Cart!</button>  }
             </div>
         </div>   

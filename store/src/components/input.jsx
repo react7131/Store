@@ -12,9 +12,9 @@ const Input = ({type, name, value, label, onChange, onBlur,  inputRef, dirty, er
                     onChange={onChange}
                     onBlur={onBlur}
                 />
-                <div className="text-danger">
+                <small className="text-danger">
                     {dirty[name]&&errors[name] ? errors[name] : ''}
-                </div>
+                </small>
             </div>
     )
 }

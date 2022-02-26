@@ -4,6 +4,7 @@ import { useToasts } from "react-toast-notifications";
 import svg from '../images/404.svg';
 import api from "../api";
 import { findItemByItemId } from "../services";
+import { Link } from "react-router-dom";
 
 const ShoppingCart = () => {
 
@@ -108,21 +109,39 @@ const ShoppingCart = () => {
                 <div className=" d-flex flex-column mt-5 justify-content-center align-items-center" style={{height: '100%'}}>
                    <img src={svg} alt="cart" />
                    <p> your cart is empty!</p>
-                   <div className="btn btn-primary mt-3 ">Return to Store</div>
+                   <Link to="/store"><div className="btn btn-primary mt-3 ">Return to Store</div></Link>
                 </div>)
             : (
                 <div className="row g-4 mt-4">
                     <div className="col-md-8">
-                        <div className="bg-white fs-6 p-4 border rounded-3">
+                        <div className="bg-white fs-6 p-4 border rounded-3 shadow">
                             {renderedList}
                         </div>     
 
                     </div>
                     <div className="col-md-4">
-                        <div className="bg-white p-5 border rounded-3 text-center">
-                            <p>Total Price:</p>
-                            <h5 className="text-primary">$ {total().toFixed(2)}</h5>
-                            <button onClick={() => onBuyNowClick(orders)} className="btn btn-primary btn-lg fs-6 mt-4 border w-100">Buy Now</button>
+                        <div className="bg-white shadow p-3 border rounded-3 d-flex flex-column">
+                            <div className="mb-2 d-flex justify-content-between align-items-center">
+                              <p>Total Price:</p>
+                              <h6 className="text-primary">$ {total().toFixed(2)}</h6>
+                            </div>
+                            <div className="mb-2 d-flex justify-content-between align-items-center">
+                              <p>discount code:</p>
+                              <div className="mb-2 d-flex w-50 h-25 float-end ">
+                                  <input type="text"  className="outline-0 rounded-0 rounded-start form-control"/>
+                                  <button className="btn btn-primary btn-sm rounded-0 rounded-end">confirm</button>
+                              </div>
+                            </div>
+                            <div className="mb-2 d-flex justify-content-between align-items-center">
+                                 <p>discount</p>
+                                 <h6>$25.00</h6> 
+                            </div>
+                            <div className="mb-2 d-flex justify-content-between align-items-center">
+                                 <p>the final price</p>
+                                 <h6 className="text-primary">$ {total().toFixed(2) - 25.00}</h6> 
+                            </div>
+                            <button onClick={() => onBuyNowClick(orders)} className="mb-2 btn btn-primary btn-lg fs-6 mt-2 border w-100">Buy Now</button>
+                            <button className="btn btn-outline-primary btn-lg fs-6 mt-2 w-100">Cancel</button>
                         </div>
                     </div>
                 </div>

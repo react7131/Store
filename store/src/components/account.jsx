@@ -12,7 +12,7 @@ const Account = () => {
         if(currentUser.user.isLoggedIn){
         (async() => {
             const response = await api.get(`users/${currentUser.user.currentUserId}`)
-            if(response) {
+            if(response.data) {
                 setAccountInformation(response.data)
            
             }
@@ -22,11 +22,11 @@ const Account = () => {
     return (
         accountInformation ?
         <div className="row g-3">
-            <AccountItem title="Full Name" value= {accountInformation.fullName} />
-            <AccountItem title="Email" value= {accountInformation.email} />
-            <AccountItem title="Birth Date" value= {accountInformation.dateOfBirth} />
-            <AccountItem title="gender" value= {accountInformation.gender} />
-            <AccountItem title="Password" value= {accountInformation.password?[...Array((accountInformation.password).length).keys()].map (n => <span key={n}>*</span>): ""} />
+            <AccountItem title="fullName" value= {accountInformation.fullName} accountInformation={accountInformation} setAccountInformation={setAccountInformation} />
+            <AccountItem title="email" value= {accountInformation.email} accountInformation={accountInformation} setAccountInformation={setAccountInformation} />
+            <AccountItem title="dateOfBirth" value= {accountInformation.dateOfBirth} accountInformation={accountInformation} setAccountInformation={setAccountInformation} />
+            <AccountItem title="gender" value= {accountInformation.gender} accountInformation={accountInformation} setAccountInformation={setAccountInformation} />
+            <AccountItem title="password" value= {accountInformation.password?[...Array((accountInformation.password).length).keys()].map (n => <span key={n}>*</span>): ""} accountInformation={accountInformation} setAccountInformation={setAccountInformation} />
         </div> : ""
     )
 }

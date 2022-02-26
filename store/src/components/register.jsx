@@ -166,7 +166,7 @@ const Register = () => {
 
     return (
         <div className="row">
-            <div className="col-10 col-lg-5 col-sm-8 mx-auto mt-4 shadow border border-info rounded-3 p-0">
+            <div className="col-10 col-lg-5 col-sm-8 mx-auto mt-4 shadow border border-primary rounded-3 p-0">
                 <div className="card ">
                     <div className="card-header text-center fs-3">
                         Register
@@ -194,6 +194,7 @@ const Register = () => {
                                     <div className="me-3">
                                         <input 
                                             type="radio" 
+                                            className="form-check-input"
                                             id="male" 
                                             name="gender" 
                                             value="male"
@@ -204,6 +205,7 @@ const Register = () => {
                                     </div>
                                     <div>
                                         <input 
+                                            className="form-check-input"
                                             type="radio" 
                                             id="female" 
                                             name="gender" 

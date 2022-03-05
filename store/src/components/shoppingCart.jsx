@@ -65,7 +65,7 @@ const ShoppingCart = () => {
 
     const renderedList = orders.map(order => {
         return (
-            <div key={order.id} className="shop-card border-bottom d-flex align-items-center px-3 " style={{width: '90%', height: '200px'}}>
+            <div key={order.id} className="shop-card border-bottom d-flex align-items-center px-3 mx-auto" style={{width: '90%', height: '200px'}}>
                 <div className="me-3 text-center" style={{width: '30%'}} >
                         <img 
                             src={order.product.image} 

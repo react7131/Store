@@ -7,6 +7,9 @@ Responsive design
 rest api
 react-router v6
 axios
+formik
+yup
+
 
 📚 About the Project:
 This is a store project with products, productdetail, dashboard, shopping card, previous orders, account information and login/Register pages.
